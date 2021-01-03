@@ -1,7 +1,13 @@
-Various package.yml to build ROCm on Solus.
+# Solus ROCm Build
 
-Mostly copied from gentoo's ebuilds of the same names, and also from the work of https://github.com/saitam757/Solus-ROCm
+Various `package.yml` to build ROCm on Solus.
 
-Check the package.yml of llvm-roc for -j 1, since you probably to up that number a bit if you have enough memory. Howewer, on my laptop with 8GB + 8GB of swap I cannot go higher.
+Mostly copied from Gentoo's ebuilds of the same names, and also from the work of https://github.com/saitam757/Solus-ROCm
 
-Attached is also a diagram of the build deps of the various components(stolen from gentoo's ebuilds, so some of them are change in these package.yml), for you to build in the right order.
+Check the `package.yml` of `llvm-roc` for `-j1`, since you probably want to up that number a bit if you have enough memory. Howewer, on my laptop with 8GB + 8GB of swap I cannot go higher.
+
+## Building
+
+Grayed out packages are dependencies already available in the Solus repository. Everything else must be built locally in the correct order. This can be handled by the `build_all.sh` script.
+
+![Rocm dependency graph](rocm-graph.png "rocm-dep-graph")
