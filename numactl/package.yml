@@ -1,10 +1,10 @@
 name       : numactl
-version    : 2.0.13
-release    : 1
+version    : 2.0.14
+release    : 2
 source     :
-    - https://github.com/numactl/numactl/archive/v2.0.13.tar.gz : 97ee012b2f294903530424b4ff7f28bcaad6a356897ce8777383f87e5c2e325d
+    - https://github.com/numactl/numactl/archive/v2.0.14.tar.gz : 1ee27abd07ff6ba140aaf9bc6379b37825e54496e01d6f7343330cf1a4487035
 homepage   : https://github.com/numactl/numactl
-license    : 
+license    :
     - GPL-2.0-only
     - LGPL-2.1-only
 component  : programming.devel
