@@ -1,7 +1,0 @@
-Various package.yml to build ROCm on Solus.
-
-Mostly copied from gentoo's ebuilds of the same names, and also from the work of https://github.com/saitam757/Solus-ROCm
-
-Check the package.yml of llvm-roc for -j 1, since you probably to up that number a bit if you have enough memory. Howewer, on my laptop with 8GB + 8GB of swap I cannot go higher.
-
-Attached is also a diagram of the build deps of the various components(stolen from gentoo's ebuilds, so some of them are change in these package.yml), for you to build in the right order.
