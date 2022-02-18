@@ -1,8 +1,8 @@
 name       : roct-thunk-interface
-version    : 4.0.0
-release    : 2
+version    : 5.0.1
+release    : 1
 source     :
-    - https://github.com/RadeonOpenCompute/ROCT-Thunk-Interface/archive/rocm-4.0.0.tar.gz : a6960fffc8388731ee18953faae12d1449c582e3b3594418845a544455895f42
+    - https://github.com/RadeonOpenCompute/ROCT-Thunk-Interface/archive/rocm-5.0.1.tar.gz : a7cb3fb1a4b7bf30d194851411f132144c21685d9e4a120392adddac999e9282
 homepage   : https://github.com/RadeonOpenCompute/ROCT-Thunk-Interface
 license    :
     - BSD-2-Clause
@@ -10,8 +10,9 @@ license    :
 component  : programming.devel
 summary    : Radeon Open Compute Thunk Interface
 description: |
-    This repository includes the user-mode API interfaces used to interact with the ROCk driver. Currently supported agents include only the AMD/ATI Fiji family of discrete GPUs.
+    This repository includes the user-mode API interfaces used to interact with the ROCk driver. 
 builddeps  :
+    - pkgconfig(libdrm)
     - pkgconfig(libpci)
     - pkgconfig(numa)
 setup      : |
