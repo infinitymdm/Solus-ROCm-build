@@ -1,8 +1,8 @@
 name       : llvm-roc
-version    : 3.1.0
+version    : 5.0.1
 release    : 1
 source     :
-    - https://github.com/RadeonOpenCompute/llvm-project/archive/roc-ocl-3.1.0.tar.gz : fb62584b8db54483e40e3c6ec35da700455b7e9bce5ce152a1382243a064c387
+    - https://github.com/RadeonOpenCompute/llvm-project/archive/refs/tags/rocm-5.0.1.tar.gz : 77e252720de65a1dd43a92d3589b350b5a90b60990cb4afa7ac95b2ba759c8f4
 homepage   : https://github.com/RadeonOpenCompute/llvm-project
 license    : Apache-2.0-with-LLVM-exception
 component  : programming.devel
@@ -24,7 +24,7 @@ setup      : |
         -DOCAMLFIND=NO .
 build      : |
     cd llvm
-    %ninja_build -j1
+    %ninja_build -j8
 install    : |
     cd llvm
     %ninja_install
