@@ -5,28 +5,10 @@ source     :
     - https://github.com/RadeonOpenCompute/llvm-project/archive/refs/tags/rocm-5.0.1.tar.gz : 77e252720de65a1dd43a92d3589b350b5a90b60990cb4afa7ac95b2ba759c8f4
 homepage   : https://github.com/RadeonOpenCompute/llvm-project
 license    : Apache-2.0-with-LLVM-exception
-summary    : 
-    - Low Level Virtual Machine, customized for ROCm
-    - clang : Clang Compiler frontend to LLVM
-    - clang-devel : Development files for building clang plugins
-component  :
-    - programming
-    - devel : programming.devel
-    - clang : programming
-    - clang-devel : programming.devel
-debug      : no
-emul32     : yes
+summary    : Low Level Virtual Machine, customized for ROCm
+component  : programming.devel
 libsplit   : no
 clang      : yes
-builddeps  : 
-    - doxygen
-    - python-recommonmark
-    - swig
-rundeps    :
-    - clang :
-        - llvm-devel
-    - clang-devel :
-        - llvm-clang
 description: |
     The LLVM Project is a collection of modular and reusable compiler and toolchain technologies. Despite its name, LLVM has little to do with traditional virtual machines. The name "LLVM" itself is not an acronym; it is the full name of the project.
 patterns   :
@@ -41,18 +23,18 @@ patterns   :
         - /usr/lib64/clang
         - /usr/lib64/libclang*.so*
         - /usr/lib64/SampleAnalyzerPlugin.so
-	    - /usr/lib64/CheckerOptionHandlingAnalyzerPlugin.so
-	    - /usr/lib64/CheckerDependencyHandlingAnalyzerPlugin.so
-	    - /usr/share/man/*/*clang*
-	    - /usr/share/man/*/*scan-build*
-	    - /usr/share/llvm/cmake
-	    - /usr/share/clang
-	    - /usr/share/opt-viewer
-	    - /usr/share/scan-build
-	    - /usr/share/scan-view
+        - /usr/lib64/CheckerOptionHandlingAnalyzerPlugin.so
+        - /usr/lib64/CheckerDependencyHandlingAnalyzerPlugin.so
+        - /usr/share/man/*/*clang*
+        - /usr/share/man/*/*scan-build*
+        - /usr/share/llvm/cmake
+        - /usr/share/clang
+        - /usr/share/opt-viewer
+        - /usr/share/scan-build
+        - /usr/share/scan-view
     - devel :
-	    - /usr/bin/FileCheck
-	    - /usr/bin/bugpoint
+        - /usr/bin/FileCheck
+        - /usr/bin/bugpoint
         - /usr/bin/count
         - /usr/bin/dsymutil
         - /usr/bin/lli*
@@ -67,10 +49,6 @@ patterns   :
         - /usr/bin/yaml-bench
         - /usr/bin/yaml2obj
         - /usr/share/llvm/cmake
-replaces   :
-    - clang : clang
-    - clang-devel : clang-devel
-
 setup      : |
     cd llvm
     %cmake_ninja \
@@ -85,8 +63,9 @@ setup      : |
         -DLLVM_VERSION_SUFFIX=roc \
         -DOCAMLFIND=NO .
 build      : |
-    cd llvm
-    %ninja_build -j8
+    pushd llvm
+    %ninja_build -v -j8
 install    : |
-    cd llvm
-    %ninja_install
+    pushd llvm
+    %ninja_install -v
+    popd
