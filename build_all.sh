@@ -4,15 +4,7 @@
 # Build Order:
 # 1. [OK]   numactl
 # 2. [OK]   ROCT-Thunk-Interface
-# 3. [FAIL] LLVM (roc version)
-#   CMake Error at tools/lld/cmake/modules/cmake_install.cmake:58 (file):
-#     file cannot create directory:
-#     /home/build/YPKG/root/llvm-roc/install/usr/lib64/llvm/roc/lib/cmake/lld.
-#     Maybe need administrative privileges.
-#   Call Stack (most recent call first):
-#     tools/lld/cmake_install.cmake:62 (include)
-#     tools/cmake_install.cmake:54 (include)
-#     cmake_install.cmake:77 (include)
+# 3. [OK]   LLVM (roc version)
 # 4. [WIP]  ROCr-Runtime
 # 5. [WIP]  rocm-cmake
 # 6. [WIP]  ROCm-CompilerSupport
