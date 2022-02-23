@@ -1,17 +1,19 @@
 name       : rocr-runtime
-version    : 3.1.0
+version    : 5.0.1
 release    : 1
 source     :
-    - https://github.com/RadeonOpenCompute/ROCR-Runtime/archive/roc-3.1.0.tar.gz : b162464ef87ce39518e59ef8406d6b897aa7a930795c586829614ed87aa1c2ce
+    - https://github.com/RadeonOpenCompute/ROCR-Runtime/archive/refs/tags/rocm-5.0.1.tar.gz : e34967774449f0859724a1cdf60c89fffb44706c847c704c3250249d32dcc65d
 homepage   : https://github.com/RadeonOpenCompute/ROCR-Runtime
 license    : NCSA
 component  : programming.devel
 summary    : HSA Runtime API and runtime for ROCm
+clang      : yes
 description: |
     This repository includes the user-mode API interfaces and libraries necessary for host applications to launch compute kernels to available HSA ROCm kernel agents.
 builddeps  :
     - pkgconfig(libelf)
     - pkgconfig(libhsakmt)
+    - cmake
 setup      : |
     mkdir -p build
     cd build
